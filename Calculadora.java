@@ -4,61 +4,77 @@ public class Calculadora {
 
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner (System.in);
-		System.out.println("Entre com o primeiro valor: ");
-		int num1 = entrada.nextInt();
-		System.out.println("Entre com o segundo valor: ");
-		int num2 = entrada.nextInt();
-
-		int opc = 0;
+		int continuar;
 		do {
-			System.out.println("AGORA SELECIONE UMA OPERACAO: ");
-			System.out.println("\n\n[1] SOMA ");
-			System.out.println("[2] SUBTRAI ");
-			System.out.println("[3] MULTIPLICA ");
-			System.out.println("[4] DIVIDE ");
-			System.out.println(">> Digite uma opcao: ");
+			System.out.println("Entre com o primeiro valor: ");
+			int num1 = entrada.nextInt();
+			System.out.println("Entre com o segundo valor: ");
+			int num2 = entrada.nextInt();
 
-			opc = entrada.nextInt();
 
-			switch(opc) {
 
-			case 1:
-				int soma = num1 + num2;
-				System.out.println("A soma é: "+soma);
+			int opc = 0;
+			do {
+				System.out.println("AGORA SELECIONE UMA OPERACAO: ");
+				System.out.println("\n\n[1] SOMA ");
+				System.out.println("[2] SUBTRAI ");
+				System.out.println("[3] MULTIPLICA ");
+				System.out.println("[4] DIVIDE ");
+				System.out.println(">> Digite uma opcao: ");
 
-				break;
-			case 2:
-				int diminui = num1 - num2;
-				System.out.println("A subtracao é: "+diminui);
 
-				break;
+				opc = entrada.nextInt();
 
-			case 3:
-				int multiplica = num1 * num2;
-				System.out.println("A multiplicacao é: "+multiplica);
+				switch(opc) {
 
-				break;
-			case 4:
-				if (num1 < num2) {
-					System.out.println("impossivel realizar calculo!! \n");
+				case 1:
+					int soma = num1 + num2;
+					System.out.println("A soma é: "+soma);
+
+					break;
+				case 2:
+					int diminui = num1 - num2;
+					System.out.println("A subtracao é: "+diminui);
+
+					break;
+
+				case 3:
+					int multiplica = num1 * num2;
+					System.out.println("A multiplicacao é: "+multiplica);
+
+					break;
+				case 4:
+					if (num1 < num2) {
+						System.out.println("impossivel realizar calculo!! \n");
+					}
+					else 
+					{
+						int divide = num1 / num2;
+						System.out.println("A divisao é: "+divide);
+
+					}
+
+					break;
+
+				default:
+					System.out.println("Operação invalida!!");
+
 				}
-				else 
-				{
-					int divide = num1 / num2;
-					System.out.println("A divisao é: "+divide);
 
-				}
-
-				break;
-
-			default:
-				System.out.println("Operação invalida!!");
-
-			}
-
-		}while (opc  > 4);
+			}while (opc > 4);
+			
+			System.out.println("deseja continuar: [1] sim [2] não ");
+			continuar = entrada.nextInt();
+			entrada.nextLine();
+			
+		}while(continuar == 1);
+		
+		System.out.println("Calculadora encerrada");
+		
 		entrada.close();
+
 	}
 }
+
 
 
