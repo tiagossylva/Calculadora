@@ -65,7 +65,6 @@ public class Calculadora {
 			
 			System.out.println("deseja continuar: [1] sim [2] não ");
 			continuar = entrada.nextInt();
-			entrada.nextLine();
 			
 		}while(continuar == 1);
 		
